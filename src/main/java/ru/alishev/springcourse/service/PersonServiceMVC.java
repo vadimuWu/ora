@@ -34,8 +34,8 @@ public class PersonServiceMVC implements ServiceMVC {
     }
 
     @Override
-    public void update(int id, Person updatedPerson) {
-        dao.update(id, updatedPerson);
+    public void update(Person person) {
+        dao.update(person);
     }
 
     @Override

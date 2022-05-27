@@ -3,6 +3,7 @@ package ru.alishev.springcourse.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.alishev.springcourse.models.Person;
@@ -23,7 +24,7 @@ public class PeopleController {
     }
 
     @GetMapping()
-    public String index(Model model) {
+    public String index(ModelMap model) {
         model.addAttribute("people", serviceMVC.index());
         return "people/index";
     }
@@ -61,7 +62,7 @@ public class PeopleController {
         if (bindingResult.hasErrors())
             return "people/edit";
 
-        serviceMVC.update(id, person);
+        serviceMVC.update( person);
         return "redirect:/people";
     }
 

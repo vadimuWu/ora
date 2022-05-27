@@ -11,7 +11,7 @@ public interface ServiceMVC {
 
     void save(Person person);
 
-    void update(int id, Person updatedPerson);
+    void update(Person person);
 
     void delete(int id);
 }
